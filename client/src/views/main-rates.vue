@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h3>Main Page</h3>
         <div v-for="(item, index) in rates" :key="index" class="rate-card">
             <h3>{{ item.pair }}</h3>
             <p>{{ item.value }}</p>

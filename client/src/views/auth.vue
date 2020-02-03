@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-5">
+            <div class="col-5" >
                 <div class="border m-5 p-5">
                     <h6>Auth</h6>
                     <form @submit.prevent="login">

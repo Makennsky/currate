@@ -31,15 +31,14 @@ class AuthController extends Controller
                 $user       =   User::query()
                     ->where('email', '=', request('email'))
                     ->first()
-                    ->toArray()
                 ;
 
-                if ($user['api_token'] === '') {
+                if ($user->api_token === '') {
 
-                    $user['api_token']    =   Str::random(40);
+                    $user->api_token    =   Str::random(40);
 
                 }
-                User::query()->update($user);
+                $user->update(['api_token' => $user->api_token]);
 
                 return response(
                     [
