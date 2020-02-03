@@ -22,5 +22,6 @@ Route::middleware(HandleCors::class)->group(function () {
     Route::post('login', 'AuthController@login');
     Route::post('rate_history', 'RateController@getPairHistory');
     Route::get('main_rates', 'RateController@getMainRates');
+    Route::post('log_check', 'AuthController@isLoggedNow');
 });
 

@@ -21,14 +21,14 @@
             if(!token){
                 this.$router.push('/')
             }
-            let auth = await axios.post('', {token: token})
+            let auth = await axios.post('http://api.techgarden.tk/api/log_check', {token: token})
             if(!auth.data.status){
                 this.$cookies.remove('auth')
                 this.$router.push('/')
             }
 
             console.log(this.$route.params.id)
-            let http = await axios.post("http://127.0.0.1:8000/api/rate_history", {pair: this.$route.params.id})
+            let http = await axios.post("http://api.techgarden.tk/api/rate_history", {pair: this.$route.params.id})
             console.log(http)
             this.pair = http.data
         }

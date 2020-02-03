@@ -65,6 +65,18 @@ class AuthController extends Controller
     }
 
 
+    public function isLoggedNow(Request $request)
+    {
+        $token  =   $request->get('token');
+        if (User::query()->where('api_token', '=', $token)->count()) {
+            return response(['status' => true], Response::HTTP_OK);
+        } else {
+            return response(['status' => false], Response::HTTP_UNAUTHORIZED);
+        }
+
+    }
+
+
     public function logout()
     {
 

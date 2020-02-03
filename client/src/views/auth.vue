@@ -39,6 +39,9 @@
 
                 })
             }
+        },
+        created() {
+            console.log('msin rates')
         }
     }
 </script>

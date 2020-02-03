@@ -16,18 +16,19 @@
         }),
         name: "main-rates",
         async created() {
+            console.log('msin rates')
             let token = this.$cookies.get('auth')
             if(!token){
                 this.$router.push('/')
             }
-            let auth = await axios.post('', {token: token})
+            let auth = await axios.post('http://api.techgarden.tk/api/log_check', {token: token})
             if(!auth.data.status){
                 this.$cookies.remove('auth')
                 this.$router.push('/')
             }
 
-            let mainRates = await axios.get("http://127.0.0.1:8000/api/main_rates").then(result => result.data).catch(error => {
-                console.log("http://localhost:8001/api/main_rates", error);
+            let mainRates = await axios.get("http://api.techgarden.tk/api/main_rates").then(result => result.data).catch(error => {
+                console.log("http://api.techgarden.tk/api/main_rates", error);
                 return false;
             })
             console.log(mainRates)

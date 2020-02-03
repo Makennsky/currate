@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/db</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="currate@localhost" uuid="3b87fbaf-9ad7-4eb0-a3f0-6eda85f51411">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/currate</jdbc-url>
+    </data-source>
   </component>
 </project>

@@ -29,13 +29,13 @@ export default new Vuex.Store({
   actions: {
       async getToken({commit}, params) {
           let http = await axios
-              .post('http://127.0.0.1:8000/api/login', params)
+              .post('http://api.techgarden.tk/api/login', params)
               .then(res => {
                   return res.data.token;
 
               }).catch(error => {
 
-                  console.log('http://127.0.0.1:8000/api/login', error)
+                  console.log('http://api.techgarden.tk/api/login', error)
                   return false
               });
           commit('getToken', http);
